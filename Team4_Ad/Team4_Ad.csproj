@@ -33,6 +33,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>GlobalizationRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -44,10 +45,25 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Microsoft Web Tools\Packages\AspNet.ScriptManager.jQuery.1.8.2\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.DataVisualization.Design" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -66,7 +82,446 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="1DepartmentEmployee\CompletedReqForm.aspx" />
+    <Content Include="1DepartmentEmployee\CompletedReqFormDetails.aspx" />
+    <Content Include="1DepartmentEmployee\EmployeeHome.aspx" />
+    <Content Include="1DepartmentEmployee\images\1.jpg" />
+    <Content Include="1DepartmentEmployee\images\10.jpg" />
+    <Content Include="1DepartmentEmployee\images\11.jpg" />
+    <Content Include="1DepartmentEmployee\images\12.jpg" />
+    <Content Include="1DepartmentEmployee\images\13.jpg" />
+    <Content Include="1DepartmentEmployee\images\14.jpg" />
+    <Content Include="1DepartmentEmployee\images\15.jpg" />
+    <Content Include="1DepartmentEmployee\images\16.jpg" />
+    <Content Include="1DepartmentEmployee\images\17.jpg" />
+    <Content Include="1DepartmentEmployee\images\18.jpg" />
+    <Content Include="1DepartmentEmployee\images\1user.JPG" />
+    <Content Include="1DepartmentEmployee\images\2.jpg" />
+    <Content Include="1DepartmentEmployee\images\2user.jpg" />
+    <Content Include="1DepartmentEmployee\images\3.jpg" />
+    <Content Include="1DepartmentEmployee\images\3user.jpg" />
+    <Content Include="1DepartmentEmployee\images\4.jpg" />
+    <Content Include="1DepartmentEmployee\images\4user.jpg" />
+    <Content Include="1DepartmentEmployee\images\5.jpg" />
+    <Content Include="1DepartmentEmployee\images\5user.jpg" />
+    <Content Include="1DepartmentEmployee\images\6.jpg" />
+    <Content Include="1DepartmentEmployee\images\6user.jpg" />
+    <Content Include="1DepartmentEmployee\images\7.jpg" />
+    <Content Include="1DepartmentEmployee\images\7user.jpg" />
+    <Content Include="1DepartmentEmployee\images\8.jpg" />
+    <Content Include="1DepartmentEmployee\images\8user.jpg" />
+    <Content Include="1DepartmentEmployee\images\9.jpg" />
+    <Content Include="1DepartmentEmployee\images\9user.jpg" />
+    <Content Include="1DepartmentEmployee\images\Logo.jpg" />
+    <Content Include="1DepartmentEmployee\images\logo2.jpg" />
+    <Content Include="1DepartmentEmployee\Recommendation.aspx" />
+    <Content Include="1DepartmentEmployee\RejectedRequisitionFormDetails.aspx" />
+    <Content Include="1DepartmentEmployee\style.css" />
+    <Content Include="1DepartmentEmployee\WaitingForCollection.aspx" />
+    <Content Include="1DepartmentEmployee\WaitingForCollectionDetails.aspx" />
+    <Content Include="1DepartmentEmployee\Waitingfordelivery.aspx" />
+    <Content Include="1DepartmentEmployee\Waitingfordeliverydetails.aspx" />
+    <Content Include="2DepartmentHead\ChangeRep.aspx" />
+    <Content Include="2DepartmentHead\DelegateRep.aspx" />
+    <Content Include="2DepartmentHead\images\1.jpg" />
+    <Content Include="2DepartmentHead\images\10user.jpg" />
+    <Content Include="2DepartmentHead\images\1user.JPG" />
+    <Content Include="2DepartmentHead\images\2user.jpg" />
+    <Content Include="2DepartmentHead\images\3user.jpg" />
+    <Content Include="2DepartmentHead\images\4user.jpg" />
+    <Content Include="2DepartmentHead\images\5user.jpg" />
+    <Content Include="2DepartmentHead\images\6user.jpg" />
+    <Content Include="2DepartmentHead\images\7user.jpg" />
+    <Content Include="2DepartmentHead\images\8user.jpg" />
+    <Content Include="2DepartmentHead\images\9user.jpg" />
+    <Content Include="2DepartmentHead\style.css" />
+    <Content Include="3DepartmentRep\style.css" />
+    <Content Include="4StoreClerk\SelectRequisitionForRetrieval.aspx" />
+    <Content Include="4StoreClerk\style.css" />
+    <Content Include="5StoreManager\style.css" />
+    <Content Include="5StoreManager\UpdateReOrder.aspx" />
+    <Content Include="6StoreSupervisor\Chart_ItemReqTrendAnalysis.aspx" />
+    <Content Include="6StoreSupervisor\Chart_ItemSupplierComparison.aspx" />
+    <Content Include="6StoreSupervisor\Chart_SpecificDept_YearSeries.aspx" />
+    <Content Include="6StoreSupervisor\Chart_SpecificYear_DeptSeries.aspx" />
+    <Content Include="6StoreSupervisor\images\1.jpg" />
+    <Content Include="6StoreSupervisor\images\10.jpg" />
+    <Content Include="6StoreSupervisor\images\11.jpg" />
+    <Content Include="6StoreSupervisor\images\12.jpg" />
+    <Content Include="6StoreSupervisor\images\13.jpg" />
+    <Content Include="6StoreSupervisor\images\14.jpg" />
+    <Content Include="6StoreSupervisor\images\15.jpg" />
+    <Content Include="6StoreSupervisor\images\16.jpg" />
+    <Content Include="6StoreSupervisor\images\17.jpg" />
+    <Content Include="6StoreSupervisor\images\18.jpg" />
+    <Content Include="6StoreSupervisor\images\1user.JPG" />
+    <Content Include="6StoreSupervisor\images\2.jpg" />
+    <Content Include="6StoreSupervisor\images\2user.jpg" />
+    <Content Include="6StoreSupervisor\images\3.jpg" />
+    <Content Include="6StoreSupervisor\images\3user.jpg" />
+    <Content Include="6StoreSupervisor\images\4.jpg" />
+    <Content Include="6StoreSupervisor\images\4user.jpg" />
+    <Content Include="6StoreSupervisor\images\5.jpg" />
+    <Content Include="6StoreSupervisor\images\5user.jpg" />
+    <Content Include="6StoreSupervisor\images\6.jpg" />
+    <Content Include="6StoreSupervisor\images\6user.jpg" />
+    <Content Include="6StoreSupervisor\images\7.jpg" />
+    <Content Include="6StoreSupervisor\images\7user.jpg" />
+    <Content Include="6StoreSupervisor\images\8.jpg" />
+    <Content Include="6StoreSupervisor\images\8user.jpg" />
+    <Content Include="6StoreSupervisor\images\9.jpg" />
+    <Content Include="6StoreSupervisor\images\9user.jpg" />
+    <Content Include="6StoreSupervisor\images\Logo.jpg" />
+    <Content Include="6StoreSupervisor\images\logo2.jpg" />
+    <Content Include="6StoreSupervisor\style.css" />
+    <Content Include="7OtherPages\ContactUs.aspx" />
+    <Content Include="7OtherPages\default.aspx" />
+    <Content Include="7OtherPages\FAQ.aspx" />
+    <Content Include="7OtherPages\StartPage.aspx" />
+    <Content Include="assets\css\material-dashboard.css" />
+    <Content Include="assets\css\material-dashboard.min.css" />
+    <Content Include="assets\demo\demo.css" />
+    <Content Include="assets\demo\demo.js" />
+    <Content Include="assets\img\apple-icon.png" />
+    <Content Include="assets\img\cover.jpg" />
+    <Content Include="assets\img\faces\avatar.jpg" />
+    <Content Include="assets\img\faces\card-profile1-square.jpg" />
+    <Content Include="assets\img\faces\card-profile2-square.jpg" />
+    <Content Include="assets\img\faces\marc.jpg" />
+    <Content Include="assets\img\favicon.png" />
+    <Content Include="assets\img\mask.png" />
+    <Content Include="assets\img\new_logo.png" />
+    <Content Include="assets\img\sidebar-1.jpg" />
+    <Content Include="assets\img\sidebar-2.jpg" />
+    <Content Include="assets\img\sidebar-3.jpg" />
+    <Content Include="assets\img\sidebar-4.jpg" />
+    <Content Include="assets\js\core\bootstrap-material-design.min.js" />
+    <Content Include="assets\js\core\jquery.min.js" />
+    <Content Include="assets\js\core\popper.min.js" />
+    <Content Include="assets\js\material-dashboard.js" />
+    <Content Include="assets\js\material-dashboard.min.js" />
+    <Content Include="assets\js\plugins\bootstrap-notify.js" />
+    <Content Include="assets\js\plugins\chartist.min.js" />
+    <Content Include="assets\js\plugins\perfect-scrollbar.jquery.min.js" />
+    <Content Include="bootstrap-4.1.2-dist\css\bootstrap-grid.css" />
+    <Content Include="bootstrap-4.1.2-dist\css\bootstrap-grid.min.css" />
+    <Content Include="bootstrap-4.1.2-dist\css\bootstrap-reboot.css" />
+    <Content Include="bootstrap-4.1.2-dist\css\bootstrap-reboot.min.css" />
+    <Content Include="bootstrap-4.1.2-dist\css\bootstrap.css" />
+    <Content Include="bootstrap-4.1.2-dist\css\bootstrap.min.css" />
+    <Content Include="bootstrap-4.1.2-dist\js\bootstrap.bundle.js" />
+    <Content Include="bootstrap-4.1.2-dist\js\bootstrap.bundle.min.js" />
+    <Content Include="bootstrap-4.1.2-dist\js\bootstrap.js" />
+    <Content Include="bootstrap-4.1.2-dist\js\bootstrap.min.js" />
+    <Content Include="1DepartmentEmployee\Add Stationary Confirmation.aspx" />
+    <Content Include="1DepartmentEmployee\EmployeeAddCart.aspx" />
+    <Content Include="2DepartmentHead\HeadHome.aspx" />
+    <Content Include="2DepartmentHead\images\Logo.jpg" />
+    <Content Include="3DepartmentRep\images\Logo.jpg" />
+    <Content Include="3DepartmentRep\RepHome.aspx" />
+    <Content Include="gulpfile.js" />
+    <Content Include="7OtherPages\login.aspx" />
+    <Content Include="3DepartmentRep\ChangeCollectionPoint.aspx" />
+    <Content Include="4StoreClerk\AddAdjustmentVoucher.aspx" />
+    <Content Include="4StoreClerk\ClerkHome.aspx" />
+    <Content Include="4StoreClerk\DisbursementList.aspx" />
+    <Content Include="4StoreClerk\DiscrepancyListSubmitted.aspx" />
+    <Content Include="4StoreClerk\images\Logo.jpg" />
+    <Content Include="5StoreManager\images\Logo.jpg" />
+    <Content Include="5StoreManager\ManagerHome.aspx" />
+    <Content Include="5StoreManager\mt250AdjustmentVoucher.aspx" />
+    <Content Include="4StoreClerk\DiscrepancyList.aspx" />
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="4StoreClerk\PlacePO.aspx" />
+    <Content Include="4StoreClerk\PODelivery.aspx" />
+    <Content Include="1DepartmentEmployee\RejectedRequisitionForm.aspx" />
+    <Content Include="1DepartmentEmployee\RetrieveReqHistory.aspx" />
+    <Content Include="1DepartmentEmployee\SelectedRequisitionForm.aspx" />
+    <Content Include="1DepartmentEmployee\UpdateRequisitionForm.aspx" />
+    <Content Include="4StoreClerk\StockCardDetail.aspx" />
+    <Content Include="2DepartmentHead\Authorise Requsition Detail.aspx" />
+    <Content Include="2DepartmentHead\Authorise Requsition list.aspx" />
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="bootstrap-4.1.2-dist\css\bootstrap-grid.css.map" />
+    <Content Include="bootstrap-4.1.2-dist\css\bootstrap-grid.min.css.map" />
+    <Content Include="bootstrap-4.1.2-dist\css\bootstrap-reboot.css.map" />
+    <Content Include="bootstrap-4.1.2-dist\css\bootstrap-reboot.min.css.map" />
+    <Content Include="bootstrap-4.1.2-dist\css\bootstrap.css.map" />
+    <Content Include="bootstrap-4.1.2-dist\css\bootstrap.min.css.map" />
+    <Content Include="bootstrap-4.1.2-dist\js\bootstrap.bundle.js.map" />
+    <Content Include="bootstrap-4.1.2-dist\js\bootstrap.bundle.min.js.map" />
+    <Content Include="bootstrap-4.1.2-dist\js\bootstrap.js.map" />
+    <Content Include="bootstrap-4.1.2-dist\js\bootstrap.min.js.map" />
+    <Content Include=".DS_Store" />
+    <Content Include="assets\css\material-dashboard.css.map" />
+    <Content Include="assets\js\material-dashboard.js.map" />
+    <Content Include="assets\scss\material-dashboard.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\bootstrap-grid.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\bootstrap-reboot.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\bootstrap.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\mixins\_alert.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\mixins\_background-variant.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\mixins\_badge.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\mixins\_border-radius.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\mixins\_box-shadow.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\mixins\_breakpoints.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\mixins\_buttons.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\mixins\_caret.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\mixins\_clearfix.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\mixins\_float.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\mixins\_forms.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\mixins\_gradients.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\mixins\_grid-framework.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\mixins\_grid.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\mixins\_hover.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\mixins\_image.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\mixins\_list-group.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\mixins\_lists.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\mixins\_nav-divider.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\mixins\_navbar-align.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\mixins\_pagination.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\mixins\_reset-text.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\mixins\_resize.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\mixins\_screen-reader.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\mixins\_size.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\mixins\_table-row.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\mixins\_text-emphasis.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\mixins\_text-hide.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\mixins\_text-truncate.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\mixins\_transition.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\mixins\_visibility.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\utilities\_align.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\utilities\_background.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\utilities\_borders.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\utilities\_clearfix.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\utilities\_display.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\utilities\_embed.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\utilities\_flex.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\utilities\_float.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\utilities\_position.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\utilities\_screenreaders.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\utilities\_sizing.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\utilities\_spacing.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\utilities\_text.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\utilities\_visibility.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\_alert.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\_badge.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\_breadcrumb.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\_button-group.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\_buttons.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\_card.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\_carousel.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\_close.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\_code.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\_custom-forms.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\_dropdown.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\_forms.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\_functions.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\_grid.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\_images.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\_input-group.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\_jumbotron.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\_list-group.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\_media.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\_mixins.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\_modal.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\_nav.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\_navbar.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\_pagination.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\_popover.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\_print.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\_progress.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\_reboot.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\_root.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\_tables.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\_tooltip.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\_transitions.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\_type.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\_utilities.scss" />
+    <Content Include="assets\scss\material-dashboard\bootstrap\scss\_variables.scss" />
+    <Content Include="assets\scss\material-dashboard\cards\_card-plain.scss" />
+    <Content Include="assets\scss\material-dashboard\cards\_card-profile.scss" />
+    <Content Include="assets\scss\material-dashboard\cards\_card-stats.scss" />
+    <Content Include="assets\scss\material-dashboard\mixins\_alert.scss" />
+    <Content Include="assets\scss\material-dashboard\mixins\_animations.scss" />
+    <Content Include="assets\scss\material-dashboard\mixins\_breakpoints.scss" />
+    <Content Include="assets\scss\material-dashboard\mixins\_buttons.scss" />
+    <Content Include="assets\scss\material-dashboard\mixins\_chartist.scss" />
+    <Content Include="assets\scss\material-dashboard\mixins\_colored-shadows.scss" />
+    <Content Include="assets\scss\material-dashboard\mixins\_drawer.scss" />
+    <Content Include="assets\scss\material-dashboard\mixins\_forms.scss" />
+    <Content Include="assets\scss\material-dashboard\mixins\_hover.scss" />
+    <Content Include="assets\scss\material-dashboard\mixins\_layout.scss" />
+    <Content Include="assets\scss\material-dashboard\mixins\_navbar-colors.scss" />
+    <Content Include="assets\scss\material-dashboard\mixins\_navs.scss" />
+    <Content Include="assets\scss\material-dashboard\mixins\_sidebar-color.scss" />
+    <Content Include="assets\scss\material-dashboard\mixins\_transparency.scss" />
+    <Content Include="assets\scss\material-dashboard\mixins\_type.scss" />
+    <Content Include="assets\scss\material-dashboard\mixins\_utilities.scss" />
+    <Content Include="assets\scss\material-dashboard\mixins\_variables.scss" />
+    <Content Include="assets\scss\material-dashboard\mixins\_vendor-prefixes.scss" />
+    <Content Include="assets\scss\material-dashboard\plugins\_animate.scss" />
+    <Content Include="assets\scss\material-dashboard\plugins\_chartist.scss" />
+    <Content Include="assets\scss\material-dashboard\plugins\_perfect-scrollbar.scss" />
+    <Content Include="assets\scss\material-dashboard\variables\_body.scss" />
+    <Content Include="assets\scss\material-dashboard\variables\_bootstrap-material-design-base.scss" />
+    <Content Include="assets\scss\material-dashboard\variables\_bootstrap-material-design.scss" />
+    <Content Include="assets\scss\material-dashboard\variables\_brand.scss" />
+    <Content Include="assets\scss\material-dashboard\variables\_buttons.scss" />
+    <Content Include="assets\scss\material-dashboard\variables\_card.scss" />
+    <Content Include="assets\scss\material-dashboard\variables\_code.scss" />
+    <Content Include="assets\scss\material-dashboard\variables\_colors-map.scss" />
+    <Content Include="assets\scss\material-dashboard\variables\_colors.scss" />
+    <Content Include="assets\scss\material-dashboard\variables\_custom-forms.scss" />
+    <Content Include="assets\scss\material-dashboard\variables\_drawer.scss" />
+    <Content Include="assets\scss\material-dashboard\variables\_dropdown.scss" />
+    <Content Include="assets\scss\material-dashboard\variables\_forms.scss" />
+    <Content Include="assets\scss\material-dashboard\variables\_layout.scss" />
+    <Content Include="assets\scss\material-dashboard\variables\_list-group.scss" />
+    <Content Include="assets\scss\material-dashboard\variables\_menu.scss" />
+    <Content Include="assets\scss\material-dashboard\variables\_modals.scss" />
+    <Content Include="assets\scss\material-dashboard\variables\_nav.scss" />
+    <Content Include="assets\scss\material-dashboard\variables\_pagination.scss" />
+    <Content Include="assets\scss\material-dashboard\variables\_shadow.scss" />
+    <Content Include="assets\scss\material-dashboard\variables\_snackbar.scss" />
+    <Content Include="assets\scss\material-dashboard\variables\_spacing.scss" />
+    <Content Include="assets\scss\material-dashboard\variables\_state.scss" />
+    <Content Include="assets\scss\material-dashboard\variables\_tables.scss" />
+    <Content Include="assets\scss\material-dashboard\variables\_tooltip.scss" />
+    <Content Include="assets\scss\material-dashboard\variables\_type.scss" />
+    <Content Include="assets\scss\material-dashboard\_alerts.scss" />
+    <Content Include="assets\scss\material-dashboard\_buttons.scss" />
+    <Content Include="assets\scss\material-dashboard\_cards.scss" />
+    <Content Include="assets\scss\material-dashboard\_checkboxes.scss" />
+    <Content Include="assets\scss\material-dashboard\_core-bootstrap.scss" />
+    <Content Include="assets\scss\material-dashboard\_dropdown.scss" />
+    <Content Include="assets\scss\material-dashboard\_example-pages.scss" />
+    <Content Include="assets\scss\material-dashboard\_fixed-plugin.scss" />
+    <Content Include="assets\scss\material-dashboard\_footers.scss" />
+    <Content Include="assets\scss\material-dashboard\_forms.scss" />
+    <Content Include="assets\scss\material-dashboard\_headers.scss" />
+    <Content Include="assets\scss\material-dashboard\_images.scss" />
+    <Content Include="assets\scss\material-dashboard\_input-group.scss" />
+    <Content Include="assets\scss\material-dashboard\_misc.scss" />
+    <Content Include="assets\scss\material-dashboard\_mixins.scss" />
+    <Content Include="assets\scss\material-dashboard\_navbar.scss" />
+    <Content Include="assets\scss\material-dashboard\_popover.scss" />
+    <Content Include="assets\scss\material-dashboard\_popups.scss" />
+    <Content Include="assets\scss\material-dashboard\_radios.scss" />
+    <Content Include="assets\scss\material-dashboard\_responsive.scss" />
+    <Content Include="assets\scss\material-dashboard\_ripples.scss" />
+    <Content Include="assets\scss\material-dashboard\_sidebar-and-main-panel.scss" />
+    <Content Include="assets\scss\material-dashboard\_social-buttons.scss" />
+    <Content Include="assets\scss\material-dashboard\_tables.scss" />
+    <Content Include="assets\scss\material-dashboard\_tabs.scss" />
+    <Content Include="assets\scss\material-dashboard\_togglebutton.scss" />
+    <Content Include="assets\scss\material-dashboard\_tooltip.scss" />
+    <Content Include="assets\scss\material-dashboard\_type.scss" />
+    <Content Include="assets\scss\material-dashboard\_variables.scss" />
+    <Content Include="CHANGELOG.md" />
+    <Content Include="package.json" />
+    <Content Include="1DepartmentEmployee\Employee.Master" />
+    <Content Include="2DepartmentHead\Head.Master" />
+    <Content Include="3DepartmentRep\Rep.Master" />
+    <Content Include="4StoreClerk\Clerk.Master" />
+    <Content Include="5StoreManager\Manager.Master" />
+    <Content Include="6StoreSupervisor\Supervisor.Master" />
     <None Include="packages.config" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\.gitignore" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\.jsbeautifyrc" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\.travis.yml" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\LICENSE" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\package-lock.json" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\package.json" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\pug\blank.pug" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\pug\cards.pug" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\pug\charts.pug" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\pug\forgot-password.pug" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\pug\includes\css\core.pug" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\pug\includes\css\custom.pug" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\pug\includes\footer.pug" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\pug\includes\js\core.pug" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\pug\includes\js\custom.pug" />
+    <Content Include="logout.pug" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\pug\includes\navbar.pug" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\pug\includes\scroll-to-top.pug" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\pug\index.pug" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\pug\login.pug" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\pug\navbar.pug" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\pug\register.pug" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\pug\tables.pug" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\README.md" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\scss\navbar\_navbar_colors.scss" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\scss\navbar\_navbar_fixed.scss" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\scss\navbar\_navbar_global.scss" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\scss\navbar\_navbar_static.scss" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\scss\navbar\_navbar_toggle.scss" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\scss\sb-admin.scss" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\scss\_cards.scss" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\scss\_footer.scss" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\scss\_global.scss" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\scss\_login.scss" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\scss\_mixins.scss" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\scss\_utilities.scss" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\scss\_variables.scss" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\bootstrap\js\bootstrap.js.map" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\font-awesome\css\font-awesome.css.map" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\font-awesome\less\animated.less" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\font-awesome\less\bordered-pulled.less" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\font-awesome\less\core.less" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\font-awesome\less\fixed-width.less" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\font-awesome\less\font-awesome.less" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\font-awesome\less\icons.less" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\font-awesome\less\larger.less" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\font-awesome\less\list.less" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\font-awesome\less\mixins.less" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\font-awesome\less\path.less" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\font-awesome\less\rotated-flipped.less" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\font-awesome\less\screen-reader.less" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\font-awesome\less\stacked.less" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\font-awesome\less\variables.less" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\font-awesome\scss\font-awesome.scss" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\font-awesome\scss\_animated.scss" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\font-awesome\scss\_core.scss" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\font-awesome\scss\_icons.scss" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\font-awesome\scss\_larger.scss" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\font-awesome\scss\_list.scss" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\font-awesome\scss\_mixins.scss" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\font-awesome\scss\_path.scss" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\font-awesome\scss\_screen-reader.scss" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\font-awesome\scss\_stacked.scss" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\font-awesome\scss\_variables.scss" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\jquery\jquery.min.map" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\jquery\jquery.slim.min.map" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -75,10 +530,506 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Web.config" />
+    <Content Include="images\Logo.jpg" />
+    <Content Include="4StoreClerk\StockCards.aspx" />
+    <Content Include="6StoreSupervisor\SupervisorAdjVoucher.aspx" />
+    <Content Include="6StoreSupervisor\SupervisorHome.aspx" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\css\sb-admin.css" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\css\sb-admin.min.css" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\gulpfile.js" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\js\sb-admin-charts.js" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\js\sb-admin-charts.min.js" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\js\sb-admin-datatables.js" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\js\sb-admin-datatables.min.js" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\js\sb-admin.js" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\js\sb-admin.min.js" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\chart.js\Chart.bundle.js" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\chart.js\Chart.bundle.min.js" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\chart.js\Chart.js" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\chart.js\Chart.min.js" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\datatables\dataTables.bootstrap4.css" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\datatables\dataTables.bootstrap4.js" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\datatables\jquery.dataTables.js" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\font-awesome\css\font-awesome.css" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\font-awesome\css\font-awesome.min.css" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\jquery-easing\jquery.easing.compatibility.js" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\jquery-easing\jquery.easing.js" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\jquery-easing\jquery.easing.min.js" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\jquery\jquery.js" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\jquery\jquery.min.js" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\jquery\jquery.slim.js" />
+    <Content Include="startbootstrap-sb-admin-gh-pages\vendor\jquery\jquery.slim.min.js" />
+    <Content Include="WCF\Service1.svc" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="4StoreClerk\StationeryRetrieval.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="1DepartmentEmployee\Add Stationary Confirmation.aspx.cs">
+      <DependentUpon>Add Stationary Confirmation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="1DepartmentEmployee\Add Stationary Confirmation.aspx.designer.cs">
+      <DependentUpon>Add Stationary Confirmation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="1DepartmentEmployee\CompletedReqForm.aspx.cs">
+      <DependentUpon>CompletedReqForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="1DepartmentEmployee\CompletedReqForm.aspx.designer.cs">
+      <DependentUpon>CompletedReqForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="1DepartmentEmployee\CompletedReqFormDetails.aspx.cs">
+      <DependentUpon>CompletedReqFormDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="1DepartmentEmployee\CompletedReqFormDetails.aspx.designer.cs">
+      <DependentUpon>CompletedReqFormDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="1DepartmentEmployee\Employee.Master.cs">
+      <DependentUpon>Employee.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="1DepartmentEmployee\Employee.Master.designer.cs">
+      <DependentUpon>Employee.Master</DependentUpon>
+    </Compile>
+    <Compile Include="1DepartmentEmployee\EmployeeAddCart.aspx.cs">
+      <DependentUpon>EmployeeAddCart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="1DepartmentEmployee\EmployeeAddCart.aspx.designer.cs">
+      <DependentUpon>EmployeeAddCart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="1DepartmentEmployee\EmployeeHome.aspx.cs">
+      <DependentUpon>EmployeeHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="1DepartmentEmployee\EmployeeHome.aspx.designer.cs">
+      <DependentUpon>EmployeeHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="1DepartmentEmployee\Recommendation.aspx.cs">
+      <DependentUpon>Recommendation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="1DepartmentEmployee\Recommendation.aspx.designer.cs">
+      <DependentUpon>Recommendation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="1DepartmentEmployee\RejectedRequisitionFormDetails.aspx.cs">
+      <DependentUpon>RejectedRequisitionFormDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="1DepartmentEmployee\RejectedRequisitionFormDetails.aspx.designer.cs">
+      <DependentUpon>RejectedRequisitionFormDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="1DepartmentEmployee\WaitingForCollection.aspx.cs">
+      <DependentUpon>WaitingForCollection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="1DepartmentEmployee\WaitingForCollection.aspx.designer.cs">
+      <DependentUpon>WaitingForCollection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="1DepartmentEmployee\WaitingForCollectionDetails.aspx.cs">
+      <DependentUpon>WaitingForCollectionDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="1DepartmentEmployee\WaitingForCollectionDetails.aspx.designer.cs">
+      <DependentUpon>WaitingForCollectionDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="1DepartmentEmployee\Waitingfordelivery.aspx.cs">
+      <DependentUpon>Waitingfordelivery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="1DepartmentEmployee\Waitingfordelivery.aspx.designer.cs">
+      <DependentUpon>Waitingfordelivery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="1DepartmentEmployee\Waitingfordeliverydetails.aspx.cs">
+      <DependentUpon>Waitingfordeliverydetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="1DepartmentEmployee\Waitingfordeliverydetails.aspx.designer.cs">
+      <DependentUpon>Waitingfordeliverydetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="2DepartmentHead\ChangeRep.aspx.cs">
+      <DependentUpon>ChangeRep.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2DepartmentHead\ChangeRep.aspx.designer.cs">
+      <DependentUpon>ChangeRep.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="2DepartmentHead\DelegateRep.aspx.cs">
+      <DependentUpon>DelegateRep.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="2DepartmentHead\DelegateRep.aspx.designer.cs">
+      <DependentUpon>DelegateRep.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="2DepartmentHead\Head.Master.cs">
+      <DependentUpon>Head.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2DepartmentHead\Head.Master.designer.cs">
+      <DependentUpon>Head.Master</DependentUpon>
+    </Compile>
+    <Compile Include="2DepartmentHead\HeadHome.aspx.cs">
+      <DependentUpon>HeadHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2DepartmentHead\HeadHome.aspx.designer.cs">
+      <DependentUpon>HeadHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="3DepartmentRep\Rep.Master.cs">
+      <DependentUpon>Rep.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="3DepartmentRep\Rep.Master.designer.cs">
+      <DependentUpon>Rep.Master</DependentUpon>
+    </Compile>
+    <Compile Include="3DepartmentRep\RepHome.aspx.cs">
+      <DependentUpon>RepHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="3DepartmentRep\RepHome.aspx.designer.cs">
+      <DependentUpon>RepHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="4StoreClerk\Clerk.Master.cs">
+      <DependentUpon>Clerk.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="4StoreClerk\Clerk.Master.designer.cs">
+      <DependentUpon>Clerk.Master</DependentUpon>
+    </Compile>
+    <Compile Include="4StoreClerk\SelectRequisitionForRetrieval.aspx.cs">
+      <DependentUpon>SelectRequisitionForRetrieval.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="4StoreClerk\SelectRequisitionForRetrieval.aspx.designer.cs">
+      <DependentUpon>SelectRequisitionForRetrieval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="5StoreManager\Manager.Master.cs">
+      <DependentUpon>Manager.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="5StoreManager\Manager.Master.designer.cs">
+      <DependentUpon>Manager.Master</DependentUpon>
+    </Compile>
+    <Compile Include="5StoreManager\UpdateReOrder.aspx.cs">
+      <DependentUpon>UpdateReOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="5StoreManager\UpdateReOrder.aspx.designer.cs">
+      <DependentUpon>UpdateReOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="6StoreSupervisor\Chart_ItemReqTrendAnalysis.aspx.cs">
+      <DependentUpon>Chart_ItemReqTrendAnalysis.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="6StoreSupervisor\Chart_ItemReqTrendAnalysis.aspx.designer.cs">
+      <DependentUpon>Chart_ItemReqTrendAnalysis.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="6StoreSupervisor\Chart_ItemSupplierComparison.aspx.cs">
+      <DependentUpon>Chart_ItemSupplierComparison.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="6StoreSupervisor\Chart_ItemSupplierComparison.aspx.designer.cs">
+      <DependentUpon>Chart_ItemSupplierComparison.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="6StoreSupervisor\Chart_SpecificDept_YearSeries.aspx.cs">
+      <DependentUpon>Chart_SpecificDept_YearSeries.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="6StoreSupervisor\Chart_SpecificDept_YearSeries.aspx.designer.cs">
+      <DependentUpon>Chart_SpecificDept_YearSeries.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="6StoreSupervisor\Chart_SpecificYear_DeptSeries.aspx.cs">
+      <DependentUpon>Chart_SpecificYear_DeptSeries.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="6StoreSupervisor\Chart_SpecificYear_DeptSeries.aspx.designer.cs">
+      <DependentUpon>Chart_SpecificYear_DeptSeries.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="6StoreSupervisor\Supervisor.Master.cs">
+      <DependentUpon>Supervisor.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="6StoreSupervisor\Supervisor.Master.designer.cs">
+      <DependentUpon>Supervisor.Master</DependentUpon>
+    </Compile>
+    <Compile Include="7OtherPages\ContactUs.aspx.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="7OtherPages\ContactUs.aspx.designer.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="7OtherPages\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="7OtherPages\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="7OtherPages\FAQ.aspx.cs">
+      <DependentUpon>FAQ.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="7OtherPages\FAQ.aspx.designer.cs">
+      <DependentUpon>FAQ.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="7OtherPages\login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="7OtherPages\login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="7OtherPages\StartPage.aspx.cs">
+      <DependentUpon>StartPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="7OtherPages\StartPage.aspx.designer.cs">
+      <DependentUpon>StartPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdjVoucher.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="2DepartmentHead\Authorise Requsition Detail.aspx.cs">
+      <DependentUpon>Authorise Requsition Detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2DepartmentHead\Authorise Requsition Detail.aspx.designer.cs">
+      <DependentUpon>Authorise Requsition Detail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="2DepartmentHead\Authorise Requsition list.aspx.cs">
+      <DependentUpon>Authorise Requsition list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="2DepartmentHead\Authorise Requsition list.aspx.designer.cs">
+      <DependentUpon>Authorise Requsition list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="logic\Business.cs" />
+    <Compile Include="3DepartmentRep\ChangeCollectionPoint.aspx.cs">
+      <DependentUpon>ChangeCollectionPoint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="3DepartmentRep\ChangeCollectionPoint.aspx.designer.cs">
+      <DependentUpon>ChangeCollectionPoint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="4StoreClerk\AddAdjustmentVoucher.aspx.cs">
+      <DependentUpon>AddAdjustmentVoucher.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="4StoreClerk\AddAdjustmentVoucher.aspx.designer.cs">
+      <DependentUpon>AddAdjustmentVoucher.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="4StoreClerk\ClerkHome.aspx.cs">
+      <DependentUpon>ClerkHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="4StoreClerk\ClerkHome.aspx.designer.cs">
+      <DependentUpon>ClerkHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="4StoreClerk\DisbursementList.aspx.cs">
+      <DependentUpon>DisbursementList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="4StoreClerk\DisbursementList.aspx.designer.cs">
+      <DependentUpon>DisbursementList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="4StoreClerk\DiscrepancyListSubmitted.aspx.cs">
+      <DependentUpon>DiscrepancyListSubmitted.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="4StoreClerk\DiscrepancyListSubmitted.aspx.designer.cs">
+      <DependentUpon>DiscrepancyListSubmitted.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="5StoreManager\ManagerHome.aspx.cs">
+      <DependentUpon>ManagerHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="5StoreManager\ManagerHome.aspx.designer.cs">
+      <DependentUpon>ManagerHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="5StoreManager\mt250AdjustmentVoucher.aspx.cs">
+      <DependentUpon>mt250AdjustmentVoucher.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="5StoreManager\mt250AdjustmentVoucher.aspx.designer.cs">
+      <DependentUpon>mt250AdjustmentVoucher.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CollectionPoint.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Department.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="4StoreClerk\DiscrepancyList.aspx.cs">
+      <DependentUpon>DiscrepancyList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="4StoreClerk\DiscrepancyList.aspx.designer.cs">
+      <DependentUpon>DiscrepancyList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Employee.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="logic\EmployeeHomeController.cs" />
+    <Compile Include="ItemCategory.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemList.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemSupplier.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="4StoreClerk\PlacePO.aspx.cs">
+      <DependentUpon>PlacePO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="4StoreClerk\PlacePO.aspx.designer.cs">
+      <DependentUpon>PlacePO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="logic\POcontrol.cs" />
+    <Compile Include="4StoreClerk\PODelivery.aspx.cs">
+      <DependentUpon>PODelivery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="4StoreClerk\PODelivery.aspx.designer.cs">
+      <DependentUpon>PODelivery.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PurchaseOrder.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseOrderDetail.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="1DepartmentEmployee\RejectedRequisitionForm.aspx.cs">
+      <DependentUpon>RejectedRequisitionForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="1DepartmentEmployee\RejectedRequisitionForm.aspx.designer.cs">
+      <DependentUpon>RejectedRequisitionForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RequDetail.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Requisition.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="1DepartmentEmployee\RetrieveReqHistory.aspx.cs">
+      <DependentUpon>RetrieveReqHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="1DepartmentEmployee\RetrieveReqHistory.aspx.designer.cs">
+      <DependentUpon>RetrieveReqHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Role.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="1DepartmentEmployee\SelectedRequisitionForm.aspx.cs">
+      <DependentUpon>SelectedRequisitionForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="1DepartmentEmployee\SelectedRequisitionForm.aspx.designer.cs">
+      <DependentUpon>SelectedRequisitionForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="4StoreClerk\StockCards.aspx.cs">
+      <DependentUpon>StockCards.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="4StoreClerk\StockCards.aspx.designer.cs">
+      <DependentUpon>StockCards.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="6StoreSupervisor\SupervisorAdjVoucher.aspx.cs">
+      <DependentUpon>SupervisorAdjVoucher.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="6StoreSupervisor\SupervisorAdjVoucher.aspx.designer.cs">
+      <DependentUpon>SupervisorAdjVoucher.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="4StoreClerk\StationeryRetrieval.aspx.cs">
+      <DependentUpon>StationeryRetrieval.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="4StoreClerk\StationeryRetrieval.aspx.designer.cs">
+      <DependentUpon>StationeryRetrieval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="6StoreSupervisor\SupervisorHome.aspx.cs">
+      <DependentUpon>SupervisorHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="6StoreSupervisor\SupervisorHome.aspx.designer.cs">
+      <DependentUpon>SupervisorHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="logic\transactioncontrol.cs" />
+    <Compile Include="1DepartmentEmployee\UpdateRequisitionForm.aspx.cs">
+      <DependentUpon>UpdateRequisitionForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="1DepartmentEmployee\UpdateRequisitionForm.aspx.designer.cs">
+      <DependentUpon>UpdateRequisitionForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="4StoreClerk\StockCardDetail.aspx.cs">
+      <DependentUpon>StockCardDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="4StoreClerk\StockCardDetail.aspx.designer.cs">
+      <DependentUpon>StockCardDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WCF\IService1.cs" />
+    <Compile Include="WCF\Service1.svc.cs">
+      <DependentUpon>Service1.svc</DependentUpon>
+    </Compile>
+    <Compile Include="WCF\WCF_AdjVoucher.cs" />
+    <Compile Include="WCF\WCF_Department.cs" />
+    <Compile Include="WCF\WCF_Disbursement.cs" />
+    <Compile Include="WCF\WCF_ItemList.cs" />
+    <Compile Include="WCF\WCF_RequisitionDetail.cs" />
+    <Compile Include="WCF\WCF_RequisitionDetailJoinItemList.cs" />
+    <Compile Include="WCF\WCF_RequsitionJoinEmployee.cs" />
+    <Compile Include="WCF\WCF_User.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="startbootstrap-sb-admin-gh-pages\pug\includes\modals\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

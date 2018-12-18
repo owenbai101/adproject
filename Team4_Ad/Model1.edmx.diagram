@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8f8e383dc5604c14b3834e1c7cb74615" Name="Diagram1">
+        <EntityTypeShape EntityType="LastADModel.AdjVoucher" Width="1.5" PointX="5.25" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LastADModel.CollectionPoint" Width="1.5" PointX="1.5" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LastADModel.Department" Width="1.5" PointX="1.5" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LastADModel.Employee" Width="1.5" PointX="3.75" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LastADModel.ItemCategory" Width="1.5" PointX="0.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="LastADModel.ItemList" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="LastADModel.ItemSupplier" Width="1.5" PointX="5.25" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LastADModel.PurchaseOrder" Width="1.5" PointX="5.25" PointY="19.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LastADModel.PurchaseOrderDetail" Width="1.5" PointX="5.25" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LastADModel.RequDetail" Width="1.5" PointX="8.25" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LastADModel.Requisition" Width="1.5" PointX="6" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LastADModel.Role" Width="1.5" PointX="1.5" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LastADModel.Supplier" Width="1.5" PointX="3" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LastADModel.sysdiagram" Width="1.5" PointX="9.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LastADModel.Transaction" Width="1.5" PointX="7.5" PointY="6.125" IsExpanded="true" />
+        <AssociationConnector Association="LastADModel.FK_AdjVoucher_ItemList" ManuallyRouted="false" />
+        <AssociationConnector Association="LastADModel.FK_Transaction_AdjVoucher" ManuallyRouted="false" />
+        <AssociationConnector Association="LastADModel.FK_Department_CollectionPoint" ManuallyRouted="false" />
+        <AssociationConnector Association="LastADModel.FK_User_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="LastADModel.FK_Requsition_User" ManuallyRouted="false" />
+        <AssociationConnector Association="LastADModel.FK_User_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="LastADModel.FK_ItemList_ItemCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="LastADModel.FK_ItemSupplier_ItemList" ManuallyRouted="false" />
+        <AssociationConnector Association="LastADModel.FK_PurchaseOrderDetail_ItemList1" ManuallyRouted="false" />
+        <AssociationConnector Association="LastADModel.FK_RequDetail_ItemList" ManuallyRouted="false" />
+        <AssociationConnector Association="LastADModel.FK_Transaction_ItemList" ManuallyRouted="false" />
+        <AssociationConnector Association="LastADModel.FK_ItemSupplier_Supplier" ManuallyRouted="false" />
+        <AssociationConnector Association="LastADModel.FK_PurchaseOrder_Supplier" ManuallyRouted="false" />
+        <AssociationConnector Association="LastADModel.FK_PurchaseOrderDetail_PurchaseOrder" ManuallyRouted="false" />
+        <AssociationConnector Association="LastADModel.FK_Transaction_PurchaseOrder" ManuallyRouted="false" />
+        <AssociationConnector Association="LastADModel.FK_RequDetail_Requsition" ManuallyRouted="false" />
+        <AssociationConnector Association="LastADModel.FK_Transaction_Requisition" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
